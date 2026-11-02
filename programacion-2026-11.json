@@ -1,0 +1,1153 @@
+{
+  "month": "2026-11",
+  "source": [
+    "Program Nov BDF Soni Mic Diez Pas.pdf",
+    "Program Nov BDF Pulpito.pdf"
+  ],
+  "days": [
+    {
+      "date": "2026-11-01",
+      "assignments": [
+        {
+          "role": "Sonido",
+          "people": [
+            "Stiven A.",
+            "Hugo R."
+          ]
+        },
+        {
+          "role": "Pasillo",
+          "people": [
+            "Paola D."
+          ]
+        },
+        {
+          "role": "Micrófono",
+          "people": [
+            "Hugo R."
+          ]
+        },
+        {
+          "role": "Diezmo",
+          "people": [
+            "Luis A.",
+            "Darsy A."
+          ]
+        },
+        {
+          "role": "Interpretación FR",
+          "people": [
+            "Natalia B.",
+            "Luisa M."
+          ]
+        },
+        {
+          "role": "Interpretación EN",
+          "people": [
+            "Paola S.",
+            "Samuel R."
+          ]
+        },
+        {
+          "role": "Púlpito · Introducción",
+          "people": [
+            "Fabian V."
+          ]
+        },
+        {
+          "role": "Púlpito · Enseñanza",
+          "people": [
+            "Alexander R."
+          ]
+        }
+      ],
+      "service_type": "Enseñanza",
+      "start_time": "17:30"
+    },
+    {
+      "date": "2026-11-02",
+      "assignments": [
+        {
+          "role": "Sonido",
+          "people": [
+            "Luis A.",
+            "Sirley R."
+          ]
+        },
+        {
+          "role": "Pasillo",
+          "people": [
+            "Esperanza H."
+          ]
+        },
+        {
+          "role": "Interpretación FR",
+          "people": [
+            "Natalia B.",
+            "Luis A."
+          ]
+        },
+        {
+          "role": "Interpretación EN",
+          "people": [
+            "Mariana R.",
+            "Mariana R."
+          ]
+        },
+        {
+          "role": "Púlpito · Apertura",
+          "people": [
+            "Fabian V."
+          ]
+        },
+        {
+          "role": "Púlpito · Cierre",
+          "people": [
+            "Alexander R."
+          ]
+        }
+      ],
+      "service_type": "Estudio bíblico",
+      "start_time": "19:00"
+    },
+    {
+      "date": "2026-11-03",
+      "assignments": [
+        {
+          "role": "Sonido",
+          "people": [
+            "Stiven A.",
+            "Natalia B."
+          ]
+        },
+        {
+          "role": "Pasillo",
+          "people": [
+            "Paola D."
+          ]
+        },
+        {
+          "role": "Interpretación FR",
+          "people": [
+            "Luisa M.",
+            "Aimer R."
+          ]
+        },
+        {
+          "role": "Interpretación EN",
+          "people": [
+            "Samuel R."
+          ]
+        },
+        {
+          "role": "Púlpito · Apertura",
+          "people": [
+            "Alexander R."
+          ]
+        },
+        {
+          "role": "Púlpito · Cierre",
+          "people": [
+            "John E."
+          ]
+        }
+      ],
+      "service_type": "Alabanzas",
+      "start_time": "19:00"
+    },
+    {
+      "date": "2026-11-04",
+      "assignments": [
+        {
+          "role": "Sonido",
+          "people": [
+            "Hugo R.",
+            "Stiven A."
+          ]
+        },
+        {
+          "role": "Pasillo",
+          "people": [
+            "Diana H."
+          ]
+        },
+        {
+          "role": "Interpretación FR",
+          "people": [
+            "Aimer R."
+          ]
+        },
+        {
+          "role": "Interpretación EN",
+          "people": [
+            "Paola S."
+          ]
+        },
+        {
+          "role": "Púlpito · Apertura",
+          "people": [
+            "Alexander R."
+          ]
+        },
+        {
+          "role": "Púlpito · Cierre",
+          "people": [
+            "Luis A."
+          ]
+        }
+      ],
+      "service_type": "Alabanzas",
+      "start_time": "19:00"
+    },
+    {
+      "date": "2026-11-05",
+      "assignments": [
+        {
+          "role": "Sonido",
+          "people": [
+            "Stiven A.",
+            "Hugo R."
+          ]
+        },
+        {
+          "role": "Pasillo",
+          "people": [
+            "John E."
+          ]
+        },
+        {
+          "role": "Micrófono",
+          "people": [
+            "Aimer R."
+          ]
+        },
+        {
+          "role": "Diezmo",
+          "people": [
+            "Esperanza H.",
+            "Paola D."
+          ]
+        },
+        {
+          "role": "Interpretación FR",
+          "people": [
+            "Luisa M.",
+            "Natalia B."
+          ]
+        },
+        {
+          "role": "Interpretación EN",
+          "people": []
+        },
+        {
+          "role": "Púlpito · Introducción",
+          "people": [
+            "Fabian V."
+          ]
+        },
+        {
+          "role": "Púlpito · Enseñanza",
+          "people": [
+            "Alexander R."
+          ]
+        }
+      ],
+      "service_type": "Enseñanza",
+      "start_time": "19:00"
+    },
+    {
+      "date": "2026-11-06",
+      "assignments": [],
+      "service_type": null,
+      "start_time": null
+    },
+    {
+      "date": "2026-11-07",
+      "assignments": [],
+      "service_type": null,
+      "start_time": null
+    },
+    {
+      "date": "2026-11-08",
+      "assignments": [
+        {
+          "role": "Sonido",
+          "people": [
+            "Hugo R.",
+            "Stiven A."
+          ]
+        },
+        {
+          "role": "Pasillo",
+          "people": [
+            "Sirley R."
+          ]
+        },
+        {
+          "role": "Interpretación FR",
+          "people": [
+            "Natalia B."
+          ]
+        },
+        {
+          "role": "Interpretación EN",
+          "people": [
+            "Luisa M.",
+            "Samuel R."
+          ]
+        },
+        {
+          "role": "Micrófono",
+          "people": [
+            "Luis A."
+          ]
+        },
+        {
+          "role": "Diezmo",
+          "people": [
+            "John E.",
+            "Paola D."
+          ]
+        },
+        {
+          "role": "Púlpito · Introducción",
+          "people": [
+            "Fabian V."
+          ]
+        },
+        {
+          "role": "Púlpito · Enseñanza",
+          "people": [
+            "Alexander R."
+          ]
+        }
+      ],
+      "service_type": "Enseñanza",
+      "start_time": "17:30"
+    },
+    {
+      "date": "2026-11-09",
+      "assignments": [
+        {
+          "role": "Sonido",
+          "people": [
+            "Fabian V.",
+            "Aimer R."
+          ]
+        },
+        {
+          "role": "Pasillo",
+          "people": [
+            "Stiven A."
+          ]
+        },
+        {
+          "role": "Interpretación FR",
+          "people": [
+            "Aimer R."
+          ]
+        },
+        {
+          "role": "Interpretación EN",
+          "people": [
+            "Mariana R."
+          ]
+        },
+        {
+          "role": "Púlpito · Apertura",
+          "people": [
+            "John E."
+          ]
+        },
+        {
+          "role": "Púlpito · Cierre",
+          "people": [
+            "Alexander R."
+          ]
+        }
+      ],
+      "service_type": "Estudio bíblico",
+      "start_time": "19:00"
+    },
+    {
+      "date": "2026-11-10",
+      "assignments": [
+        {
+          "role": "Sonido",
+          "people": [
+            "John E.",
+            "Natalia B."
+          ]
+        },
+        {
+          "role": "Pasillo",
+          "people": [
+            "Daniela G."
+          ]
+        },
+        {
+          "role": "Interpretación FR",
+          "people": [
+            "Esperanza H."
+          ]
+        },
+        {
+          "role": "Interpretación EN",
+          "people": [
+            "Paola S."
+          ]
+        },
+        {
+          "role": "Púlpito · Apertura",
+          "people": [
+            "Fabian V."
+          ]
+        },
+        {
+          "role": "Púlpito · Cierre",
+          "people": [
+            "Fabian V."
+          ]
+        }
+      ],
+      "service_type": "Alabanzas",
+      "start_time": "19:00"
+    },
+    {
+      "date": "2026-11-11",
+      "assignments": [
+        {
+          "role": "Sonido",
+          "people": [
+            "Aimer R.",
+            "Stiven A."
+          ]
+        },
+        {
+          "role": "Pasillo",
+          "people": [
+            "Diana H."
+          ]
+        },
+        {
+          "role": "Interpretación FR",
+          "people": [
+            "Mariana R."
+          ]
+        },
+        {
+          "role": "Interpretación EN",
+          "people": [
+            "Paola S."
+          ]
+        },
+        {
+          "role": "Púlpito · Apertura",
+          "people": [
+            "Alexander R."
+          ]
+        },
+        {
+          "role": "Púlpito · Cierre",
+          "people": [
+            "Luis A."
+          ]
+        }
+      ],
+      "service_type": "Alabanzas",
+      "start_time": "19:00"
+    },
+    {
+      "date": "2026-11-12",
+      "assignments": [
+        {
+          "role": "Sonido",
+          "people": [
+            "Stiven A.",
+            "John E."
+          ]
+        },
+        {
+          "role": "Pasillo",
+          "people": [
+            "Paola D."
+          ]
+        },
+        {
+          "role": "Micrófono",
+          "people": [
+            "Hugo R."
+          ]
+        },
+        {
+          "role": "Diezmo",
+          "people": [
+            "Daniela G.",
+            "Aimer R."
+          ]
+        },
+        {
+          "role": "Interpretación FR",
+          "people": [
+            "Natalia B.",
+            "Luisa M."
+          ]
+        },
+        {
+          "role": "Interpretación EN",
+          "people": [
+            "Paola S.",
+            "Samuel R."
+          ]
+        },
+        {
+          "role": "Púlpito · Introducción",
+          "people": [
+            "Fabian V."
+          ]
+        },
+        {
+          "role": "Púlpito · Enseñanza",
+          "people": [
+            "Alexander R."
+          ]
+        }
+      ],
+      "service_type": "Enseñanza",
+      "start_time": "19:00"
+    },
+    {
+      "date": "2026-11-13",
+      "assignments": [],
+      "service_type": null,
+      "start_time": null
+    },
+    {
+      "date": "2026-11-14",
+      "assignments": [],
+      "service_type": null,
+      "start_time": null
+    },
+    {
+      "date": "2026-11-15",
+      "assignments": [
+        {
+          "role": "Sonido",
+          "people": [
+            "Stiven A.",
+            "Sirley R."
+          ]
+        },
+        {
+          "role": "Pasillo",
+          "people": [
+            "John E."
+          ]
+        },
+        {
+          "role": "Micrófono",
+          "people": [
+            "Luis A."
+          ]
+        },
+        {
+          "role": "Diezmo",
+          "people": [
+            "Paola D.",
+            "Diana H."
+          ]
+        },
+        {
+          "role": "Interpretación FR",
+          "people": [
+            "Natalia B.",
+            "Samuel R."
+          ]
+        },
+        {
+          "role": "Púlpito · Introducción",
+          "people": [
+            "Fabian V."
+          ]
+        },
+        {
+          "role": "Púlpito · Enseñanza",
+          "people": [
+            "Alexander R."
+          ]
+        }
+      ],
+      "service_type": "Enseñanza",
+      "start_time": "17:30"
+    },
+    {
+      "date": "2026-11-16",
+      "assignments": [
+        {
+          "role": "Sonido",
+          "people": [
+            "Hugo R.",
+            "Aimer R."
+          ]
+        },
+        {
+          "role": "Pasillo",
+          "people": [
+            "Diana H."
+          ]
+        },
+        {
+          "role": "Interpretación FR",
+          "people": [
+            "Esperanza H."
+          ]
+        },
+        {
+          "role": "Interpretación EN",
+          "people": [
+            "Paola S."
+          ]
+        },
+        {
+          "role": "Púlpito · Apertura",
+          "people": [
+            "John E."
+          ]
+        },
+        {
+          "role": "Púlpito · Cierre",
+          "people": [
+            "Alexander R."
+          ]
+        }
+      ],
+      "service_type": "Estudio bíblico",
+      "start_time": "19:00"
+    },
+    {
+      "date": "2026-11-17",
+      "assignments": [
+        {
+          "role": "Sonido",
+          "people": [
+            "Fabian V.",
+            "John E."
+          ]
+        },
+        {
+          "role": "Pasillo",
+          "people": [
+            "Esperanza H."
+          ]
+        },
+        {
+          "role": "Interpretación FR",
+          "people": [
+            "Luisa M."
+          ]
+        },
+        {
+          "role": "Interpretación EN",
+          "people": [
+            "Didier T."
+          ]
+        },
+        {
+          "role": "Púlpito · Apertura",
+          "people": [
+            "Alexander R."
+          ]
+        },
+        {
+          "role": "Púlpito · Cierre",
+          "people": [
+            "Fabian V."
+          ]
+        }
+      ],
+      "service_type": "Alabanzas",
+      "start_time": "19:00"
+    },
+    {
+      "date": "2026-11-18",
+      "assignments": [
+        {
+          "role": "Sonido",
+          "people": [
+            "Stiven A.",
+            "Fabian V."
+          ]
+        },
+        {
+          "role": "Pasillo",
+          "people": [
+            "Darsy A."
+          ]
+        },
+        {
+          "role": "Interpretación FR",
+          "people": [
+            "Aimer R."
+          ]
+        },
+        {
+          "role": "Interpretación EN",
+          "people": [
+            "Paola S."
+          ]
+        },
+        {
+          "role": "Púlpito · Apertura",
+          "people": [
+            "Alexander R."
+          ]
+        },
+        {
+          "role": "Púlpito · Cierre",
+          "people": [
+            "Luis A."
+          ]
+        }
+      ],
+      "service_type": "Alabanzas",
+      "start_time": "19:00"
+    },
+    {
+      "date": "2026-11-19",
+      "assignments": [
+        {
+          "role": "Sonido",
+          "people": [
+            "Luis A.",
+            "Stiven A."
+          ]
+        },
+        {
+          "role": "Pasillo",
+          "people": [
+            "Diana H."
+          ]
+        },
+        {
+          "role": "Micrófono",
+          "people": [
+            "John E."
+          ]
+        },
+        {
+          "role": "Diezmo",
+          "people": [
+            "Aimer R.",
+            "Daniela G."
+          ]
+        },
+        {
+          "role": "Interpretación FR",
+          "people": [
+            "Luisa M.",
+            "Natalia B."
+          ]
+        },
+        {
+          "role": "Interpretación EN",
+          "people": [
+            "Paola S.",
+            "Samuel R."
+          ]
+        },
+        {
+          "role": "Púlpito · Introducción",
+          "people": [
+            "Didier T."
+          ]
+        },
+        {
+          "role": "Púlpito · Enseñanza",
+          "people": [
+            "Alexander R."
+          ]
+        }
+      ],
+      "service_type": "Enseñanza",
+      "start_time": "19:00"
+    },
+    {
+      "date": "2026-11-20",
+      "assignments": [],
+      "service_type": null,
+      "start_time": null
+    },
+    {
+      "date": "2026-11-21",
+      "assignments": [],
+      "service_type": null,
+      "start_time": null
+    },
+    {
+      "date": "2026-11-22",
+      "assignments": [
+        {
+          "role": "Sonido",
+          "people": [
+            "Stiven A.",
+            "John E."
+          ]
+        },
+        {
+          "role": "Pasillo",
+          "people": [
+            "Sirley R."
+          ]
+        },
+        {
+          "role": "Micrófono",
+          "people": [
+            "Fabian V."
+          ]
+        },
+        {
+          "role": "Diezmo",
+          "people": [
+            "Darsy A.",
+            "Luis A."
+          ]
+        },
+        {
+          "role": "Interpretación FR",
+          "people": [
+            "Esperanza H.",
+            "Samuel R."
+          ]
+        },
+        {
+          "role": "Interpretación EN",
+          "people": [
+            "Luisa M.",
+            "Paola S."
+          ]
+        },
+        {
+          "role": "Púlpito · Introducción",
+          "people": [
+            "Fabian V."
+          ]
+        },
+        {
+          "role": "Púlpito · Enseñanza",
+          "people": [
+            "Didier T."
+          ]
+        }
+      ],
+      "service_type": "Enseñanza",
+      "start_time": "17:30"
+    },
+    {
+      "date": "2026-11-23",
+      "assignments": [
+        {
+          "role": "Sonido",
+          "people": [
+            "Luis A.",
+            "Samuel R."
+          ]
+        },
+        {
+          "role": "Pasillo",
+          "people": [
+            "Diana H."
+          ]
+        },
+        {
+          "role": "Interpretación FR",
+          "people": [
+            "Aimer R."
+          ]
+        },
+        {
+          "role": "Interpretación EN",
+          "people": [
+            "Didier T."
+          ]
+        },
+        {
+          "role": "Púlpito · Apertura",
+          "people": [
+            "Fabian V."
+          ]
+        },
+        {
+          "role": "Púlpito · Cierre",
+          "people": [
+            "Alexander R."
+          ]
+        }
+      ],
+      "service_type": "Estudio bíblico",
+      "start_time": "19:00"
+    },
+    {
+      "date": "2026-11-24",
+      "assignments": [
+        {
+          "role": "Sonido",
+          "people": [
+            "Luisa M.",
+            "Hugo R."
+          ]
+        },
+        {
+          "role": "Pasillo",
+          "people": [
+            "Paola D."
+          ]
+        },
+        {
+          "role": "Interpretación FR",
+          "people": [
+            "Natalia B."
+          ]
+        },
+        {
+          "role": "Interpretación EN",
+          "people": [
+            "Samuel R."
+          ]
+        },
+        {
+          "role": "Púlpito · Apertura",
+          "people": [
+            "Alexander R."
+          ]
+        },
+        {
+          "role": "Púlpito · Cierre",
+          "people": [
+            "John E."
+          ]
+        }
+      ],
+      "service_type": "Alabanzas",
+      "start_time": "19:00"
+    },
+    {
+      "date": "2026-11-25",
+      "assignments": [
+        {
+          "role": "Sonido",
+          "people": [
+            "John E.",
+            "Sirley R."
+          ]
+        },
+        {
+          "role": "Pasillo",
+          "people": [
+            "Diana H."
+          ]
+        },
+        {
+          "role": "Interpretación FR",
+          "people": [
+            "Aimer R."
+          ]
+        },
+        {
+          "role": "Interpretación EN",
+          "people": [
+            "Mariana R."
+          ]
+        },
+        {
+          "role": "Púlpito · Apertura",
+          "people": [
+            "Alexander R."
+          ]
+        },
+        {
+          "role": "Púlpito · Cierre",
+          "people": [
+            "Luis A."
+          ]
+        }
+      ],
+      "service_type": "Alabanzas",
+      "start_time": "19:00"
+    },
+    {
+      "date": "2026-11-26",
+      "assignments": [
+        {
+          "role": "Sonido",
+          "people": [
+            "Aimer R.",
+            "Luis A."
+          ]
+        },
+        {
+          "role": "Pasillo",
+          "people": [
+            "Daniela G."
+          ]
+        },
+        {
+          "role": "Micrófono",
+          "people": [
+            "Aimer R."
+          ]
+        },
+        {
+          "role": "Diezmo",
+          "people": [
+            "Hugo R.",
+            "Esperanza H."
+          ]
+        },
+        {
+          "role": "Interpretación FR",
+          "people": [
+            "Natalia B.",
+            "Luisa M."
+          ]
+        },
+        {
+          "role": "Interpretación EN",
+          "people": [
+            "Samuel R.",
+            "Paola S."
+          ]
+        },
+        {
+          "role": "Púlpito · Introducción",
+          "people": [
+            "Fabian V."
+          ]
+        },
+        {
+          "role": "Púlpito · Enseñanza",
+          "people": [
+            "Didier T."
+          ]
+        }
+      ],
+      "service_type": "Enseñanza",
+      "start_time": "19:00"
+    },
+    {
+      "date": "2026-11-27",
+      "assignments": [],
+      "service_type": null,
+      "start_time": null
+    },
+    {
+      "date": "2026-11-28",
+      "assignments": [],
+      "service_type": null,
+      "start_time": null
+    },
+    {
+      "date": "2026-11-29",
+      "assignments": [
+        {
+          "role": "Pasillo",
+          "people": [
+            "Paola D."
+          ]
+        },
+        {
+          "role": "Micrófono",
+          "people": [
+            "John E."
+          ]
+        },
+        {
+          "role": "Diezmo",
+          "people": [
+            "Luis A.",
+            "Darsy A."
+          ]
+        },
+        {
+          "role": "Interpretación FR",
+          "people": [
+            "Esperanza H.",
+            "Natalia B."
+          ]
+        },
+        {
+          "role": "Interpretación EN",
+          "people": [
+            "Paola S.",
+            "Samuel R."
+          ]
+        },
+        {
+          "role": "Sonido",
+          "people": [
+            "Hugo R.",
+            "Stiven A."
+          ]
+        },
+        {
+          "role": "Púlpito · Introducción",
+          "people": [
+            "Didier T."
+          ]
+        },
+        {
+          "role": "Púlpito · Enseñanza",
+          "people": [
+            "Alexander R."
+          ]
+        }
+      ],
+      "service_type": "Enseñanza",
+      "start_time": "17:30"
+    },
+    {
+      "date": "2026-11-30",
+      "assignments": [
+        {
+          "role": "Pasillo",
+          "people": [
+            "Diana H."
+          ]
+        },
+        {
+          "role": "Interpretación FR",
+          "people": [
+            "Luisa M."
+          ]
+        },
+        {
+          "role": "Interpretación EN",
+          "people": [
+            "Paola S."
+          ]
+        },
+        {
+          "role": "Sonido",
+          "people": [
+            "Hugo R.",
+            "Luis A."
+          ]
+        },
+        {
+          "role": "Púlpito · Apertura",
+          "people": [
+            "Fabian V."
+          ]
+        },
+        {
+          "role": "Púlpito · Cierre",
+          "people": [
+            "John E."
+          ]
+        }
+      ],
+      "service_type": "Estudio bíblico",
+      "start_time": "19:00"
+    }
+  ],
+  "note": "Asignaciones transcritas de ambos PDF de noviembre, sin aplicar reglas de generación automática. Púlpito conserva las dos actividades indicadas por el documento original."
+}
