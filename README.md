@@ -1,53 +1,81 @@
-# IDMJI — Programación Bois-des-Filion (noviembre 2026)
+# IDMJI — Programación Bois-des-Filion
 
-**Versión:** MVP 1.0 de consulta, derivada de la interfaz v6. **Estado:** preparado para revisión; publicación pendiente.
+**Versión funcional:** v1.1 (noviembre 2026)  
+**Estado:** sitio publicado; desarrollo pausado tras incorporar numeración de guías.  
+**URL operativa:** https://dydata.ca/idmji/  
+**Administración:** https://dydata.ca/idmji/admin/  
+**Hospedaje:** MochaHost / cPanel (PHP).  
+**Importante:** este repositorio contiene documentación histórica del MVP estático. **No se ha confirmado que los archivos fuente de producción estén sincronizados con GitHub.** No desplegar la versión estática histórica encima de producción.
 
-## Objetivo
-Consultar desde un navegador la programación **ya aprobada** de noviembre de 2026, sin generar ni editar asignaciones.
+## Alcance implementado
 
-## Funciones
-- **Hoy:** abre la fecha local de `America/Toronto` dentro de noviembre; las flechas permiten navegar entre el 1 y el 30.
-- **Mes:** muestra los días con asignaciones.
-- Se muestra el tipo de servicio y su hora: domingo y jueves Enseñanza; lunes Estudio bíblico; martes y miércoles Alabanzas.
-- Incluye Púlpito (Introducción/Enseñanza o Apertura/Cierre) y las funciones transcritas del otro PDF.
-- Mensaje final de puntualidad, privacidad y coordinación de reemplazos.
+- Consulta pública por día (**Hoy**, flechas) y por **Mes**, con asignaciones y horas.
+- Programación de noviembre de 2026 proveniente de los dos PDF originales; no se generan asignaciones automáticamente.
+- Panel administrativo con autenticación y formulario de reemplazos.
+- API PHP administrativa para consultar programación y registrar reemplazos con control de sesión y CSRF.
+- Almacenamiento privado de programación, colaboradores, reemplazos e historial de auditoría, fuera de `public_html`.
+- Endpoint público de solo lectura `/idmji/api/public-programacion.php`, que devuelve la programación con los reemplazos aplicados, sin catálogo administrativo ni historial.
+- Numeración de guías visible en la programación pública:
+  - **Alabanzas:** «Guía de coros N.º 27/43» el **2026-11-04**; máximo 43, luego vuelve a 1.
+  - **Enseñanza:** «Guía de himnos y coros N.º 60/82» el **2026-11-05**; máximo 82, luego vuelve a 1.
+  - **Estudio bíblico:** sin guía.
+- Las secuencias se calculan en el navegador con base en los servicios del mes cargado; **la continuidad entre meses futuros todavía no está implementada**.
 
-## Arquitectura
-Sitio **estático**, HTML/CSS/JavaScript sin dependencias externas. `index.html` contiene los datos embebidos y funciona de manera autónoma; `programacion-2026-11.json` es una copia legible para trazabilidad y futuras evoluciones. **La web no carga ese JSON**, por lo que cambiar solo el JSON no actualiza la pantalla.
+## Arquitectura actual
 
 ```mermaid
-flowchart LR
-  A[PDF originales - privados] --> B[Transcripción y revisión]
-  B --> C[index.html con JSON embebido]
-  B --> D[programacion-2026-11.json]
-  C --> E[GitHub Pages - consulta pública]
+flowchart TD
+  U[Consulta pública] --> WEB[index.html: HTML/CSS/JS]
+  WEB --> PUB[GET api/public-programacion.php]
+  A[Administrador] --> ADM[admin/dashboard.html]
+  ADM --> AUTH[API PHP: sesión / CSRF]
+  ADM --> PGET[GET api/programacion.php]
+  ADM --> POST[POST api/reemplazos.php]
+  PUB --> P[(programacion.json privado)]
+  PUB --> R[(reemplazos.json privado)]
+  PGET --> P
+  PGET --> R
+  POST --> R
+  POST --> C[(colaboradores.json privado)]
 ```
 
-## Fuentes y trazabilidad
-- `Program Nov BDF Soni Mic Diez Pas.pdf` (2 páginas).
-- `Program Nov BDF Pulpito.pdf` (1 página).
-Los PDF **no se incluyen** en este repositorio público porque contienen nombres completos. Se preserva la programación del documento original, aunque difiera de reglas de programación futura.
+La programación original se conserva; los reemplazos se guardan separadamente y se aplican a una copia en memoria para las consultas. El HTML público aún contiene una copia de la programación como dato inicial; una solicitud `fetch()` consulta la API y sustituye los datos al recibir respuesta. **Pendiente:** eliminar esa copia embebida y gestionar explícitamente el estado de carga/error para evitar información desactualizada.
 
-## Privacidad
-Los nombres publicados se reducen a nombre e inicial; sin embargo, **fecha + función + nombre abreviado** aún puede identificar personas y revelar vinculación religiosa. Antes de publicar se requiere autorización/base jurídica validada por IDMJI, revisión del JSON y confirmación de responsables. `noindex` no restringe el acceso.
+## Rutas operativas conocidas
 
-## Ejecución local
-Abrir `index.html` en un navegador. No requiere servidor ni instalación.
+| Componente | Ruta en el servidor |
+|---|---|
+| Sitio público | `/home/hruiz76/public_html/idmji/index.html` |
+| Administración | `/home/hruiz76/public_html/idmji/admin/` |
+| API PHP | `/home/hruiz76/public_html/idmji/api/` |
+| Datos privados | `/home/hruiz76/idmji-data/` |
 
-## Publicación en GitHub Pages
-1. Crear repositorio público dedicado, por ejemplo `idmji-programaciones`, bajo la organización autorizada.
-2. Subir `index.html`, `programacion-2026-11.json`, `.nojekyll`, `README.md` y `docs/`. **No subir los PDF originales**.
-3. En **Settings → Pages**, elegir **Deploy from a branch**, rama `main`, carpeta `/(root)` y guardar.
-4. Abrir la URL mostrada por GitHub y validar Hoy/Mes desde móvil y escritorio.
-5. Si se requiere retirar información, borrar la publicación y evaluar cachés, forks, historial y copias externas.
+No subir a GitHub `admin.json`, `security.php`, datos privados, credenciales, copias de respaldo ni los PDF con nombres completos. Antes de versionar código de producción, revisar configuración, datos personales y secretos.
 
-## Actualización / reversión
-- Para actualizar un nombre o fecha, modificar **tanto** el JSON embebido de `index.html` como `programacion-2026-11.json` y comprobar que coinciden.
-- Crear un commit con la corrección y verificar el despliegue.
-- Reversión: revertir el commit anterior o desactivar Pages. **Desactivar Pages no garantiza eliminar copias previamente obtenidas.**
+## Evidencias de esta sesión
 
-## Exclusiones
-No hay autenticación, base de datos, APIs, edición, sustituciones en tiempo real ni generación de diciembre.
+- El usuario confirmó que la página pública y el panel administrativo cargan correctamente.
+- El usuario confirmó que las secuencias de guías se muestran correctamente.
+- La creación del endpoint público y los cambios de HTML se realizaron mediante comandos ejecutados por el usuario en MochaHost.
+- **No se ha completado una prueba extremo a extremo de registro de reemplazo real**, ni se ha verificado un cambio de nombre reflejado en la página pública.
+- **No se ha realizado despliegue desde GitHub**; el servidor MochaHost es la instalación operativa.
 
-## Validaciones pendientes
-Ver `docs/VALIDACION.md`.
+## Retomar el trabajo
+
+1. Confirmar que el sitio continúa operativo y disponer de respaldo de producción.
+2. Revisar el contrato del endpoint público y la coherencia de reemplazos en el panel.
+3. Ejecutar una única prueba autorizada de reemplazo, o una prueba aislada sin modificar la programación oficial; comprobar persistencia, auditoría y visualización pública.
+4. Eliminar la duplicación de datos del HTML público para que la API sea la única fuente de lectura.
+5. Preparar una exportación revisada y sin secretos del código operativo al repositorio; no reemplazar producción por los archivos históricos.
+6. Diseñar continuidad de numeración entre meses y futura programación de diciembre.
+7. Actualizar el checklist de aceptación y registrar evidencias.
+
+## Seguridad y privacidad
+
+Este repositorio es público. Nombres abreviados junto con fechas, funciones y lugar pueden revelar información sensible sobre participación religiosa. La marca `noindex` **no es un control de acceso**. Confirmar autorización de publicación, minimizar datos y limitar accesos administrativos. Los archivos privados deben permanecer fuera de `public_html`.
+
+## Documentación
+
+- [Validación y pendientes](docs/VALIDACION.md)
+- [Arquitectura, operación y decisiones](docs/ARQUITECTURA-V1.1.md)
+- `programacion-2026-11.json` y el `index.html` histórico son artefactos del MVP 1.0; no deben considerarse automáticamente la fuente de producción v1.1.
