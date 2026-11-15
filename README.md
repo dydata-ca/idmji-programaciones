@@ -1,6 +1,6 @@
 # IDMJI — Programación Bois-des-Filion
 
-> **Actualización 2026-11-15 — v1.3:** desplegada la consulta administrativa multimes (noviembre 2026–enero 2027). **Incidencia abierta:** el formulario de reemplazos muestra «Token CSRF no disponible»; la escritura publicada no está validada. Ver [documentación y registro de incidencia v1.3](docs/releases/IDMJI-v1.3.md). El contenido histórico que sigue describe v1.1 y no debe usarse para desplegar producción.
+> **Actualización 2026-11-15 — v1.3:** desplegada la consulta administrativa multimes (noviembre 2026–enero 2027). **Incidencia CSRF resuelta funcionalmente:** corregida la lectura del campo `csrf_token` en el panel. La persistencia y auditoría de un reemplazo real en producción aún requieren verificación explícita. Ver [documentación y registro de incidencia v1.3](docs/releases/IDMJI-v1.3.md). El contenido histórico que sigue describe v1.1 y no debe usarse para desplegar producción.
 
 **Versión funcional:** v1.1 (noviembre 2026)  
 **Estado:** sitio publicado; desarrollo pausado tras incorporar numeración de guías.  
