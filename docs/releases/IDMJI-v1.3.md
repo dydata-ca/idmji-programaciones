@@ -3,7 +3,7 @@
 **Fecha:** 2026-11-15  
 **Sistema:** Programaciones IDMJI, Bois-des-Filion  
 **Entorno:** MochaHost / cPanel / PHP  
-**Estado:** desplegado; consulta multimes validada; **registro administrativo bloqueado por incidencia CSRF pendiente de diagnóstico**.  
+**Estado:** desplegado; consulta multimes validada; **incidencia CSRF corregida y funcionamiento confirmado por el usuario**. Persistencia y auditoría del reemplazo publicado pendientes de evidencia explícita.  
 **Producción:** https://dydata.ca/idmji/  
 **Administración:** https://dydata.ca/idmji/admin/
 
@@ -51,7 +51,7 @@ Los tres archivos de programación permanecen privados bajo `/home/hruiz76/idmji
 | Paquete preparado | `/home/hruiz76/idmji-data/release-v1.3/` | Copias verificadas de tres componentes |
 | Respaldo previo | `/home/hruiz76/idmji-reemplazos-pre-v1.3.tar.gz` | Respaldo disponible antes de activar v1.3 |
 
-La API administrativa exige sesión; la escritura usa POST y protección CSRF. La lógica de almacenamiento contempla bloqueo de archivo, guardado atómico y auditoría. **El fallo CSRF observado impide afirmar que el flujo de escritura publicado funciona.**
+La API administrativa exige sesión; la escritura usa POST y protección CSRF. La lógica de almacenamiento contempla bloqueo de archivo, guardado atómico y auditoría. **El fallo CSRF fue corregido en el panel; queda pendiente evidencia explícita de persistencia, auditoría y proyección pública del reemplazo publicado.**
 
 ## 4. Despliegue realizado
 
@@ -83,28 +83,22 @@ IDMJI v1.3: archivos administrativos publicados
 | Selector y consulta de tres meses | Usuario confirmó que los tres funcionan | Aprobada visualmente |
 | Formulario de reemplazo para enero | Usuario confirmó visualización correcta sin guardar | Aprobada visualmente |
 | Escritura y auditoría en almacenamiento privado de prueba | Tres reemplazos de prueba; validadores aprobados | Aprobada en entorno aislado |
-| Registro real mediante API publicada | Mensaje `Token CSRF no disponible` | **Bloqueada / incidencia abierta** |
+| Obtención de token CSRF desde el panel | El usuario confirmó que funciona tras la corrección | **Resuelta funcionalmente** |
 | Reflejo de reemplazo real en consulta pública | No ejecutado | Pendiente |
 
-## 6. Incidencia abierta INC-2026-11-15-CSRF
+## 6. Incidencia resuelta INC-2026-11-15-CSRF
 
 **Síntoma:** el formulario «Gestión de reemplazos» muestra `Token CSRF no disponible` al intentar el reemplazo. La captura corresponde al **2026-12-03**, rol **Diezmo**, con un colaborador original y un sustituto seleccionados. No se publica aquí el detalle nominal por privacidad.
 
 **Impacto:** la lectura administrativa multimes funciona, pero no puede darse por validado el registro de reemplazos en producción.
 
-**Causas posibles, aún no verificadas:**
-- Sesión administrativa expirada o no reconocida al solicitar el token.
-- Error de ruta, respuesta o procesamiento del endpoint de obtención de CSRF en el dashboard v1.3.
-- Diferencia entre el contrato esperado por el cliente y la respuesta del servidor.
+**Causa raíz confirmada:** `api/csrf.php` devuelve JSON con la propiedad `csrf_token`, mientras que `admin/dashboard.html` leía `csrfData.token`. Por ello la propiedad era indefinida y el cliente mostraba «Token CSRF no disponible».
 
-**Próximo diagnóstico controlado:**
-1. Cerrar sesión, volver a autenticar y repetir la vista previa sin guardar.
-2. Si persiste, inspeccionar en el navegador la solicitud de token: URL, código HTTP, cuerpo de respuesta y cookies de sesión, sin compartir tokens ni cookies.
-3. Revisar la implementación del flujo CSRF y los logs pertinentes; corregir solo la causa raíz.
-4. Validar de nuevo autenticación y la obtención del token antes de permitir escrituras.
-5. Ejecutar una sustitución real únicamente cuando exista un caso legítimo autorizado; verificar persistencia, auditoría y consulta pública.
+**Corrección aplicada en MochaHost:** cambiar en `admin/dashboard.html` la expresión `const token = csrfData.token;` por `const token = csrfData.csrf_token;`. Se creó un respaldo previo `admin/dashboard.html.pre-csrf-fix` mediante el procedimiento indicado; su existencia no fue verificada independientemente.
 
-**No se ha demostrado que el reemplazo mostrado en la captura se haya guardado.**
+**Validación:** el usuario confirmó «listo funciona» después de la modificación. No se recibieron todavía evidencias explícitas de contenido persistido en `reemplazos.json`, historial de auditoría o reflejo del cambio en la API pública.
+
+**Reversión puntual:** restaurar `dashboard.html` desde el respaldo `dashboard.html.pre-csrf-fix` solo si es necesario y tras validar su contenido; ello reintroduciría el error CSRF, por lo que no se recomienda salvo como contingencia.
 
 ## 7. Seguridad, privacidad y riesgos
 
@@ -140,15 +134,17 @@ No ejecutar una extracción indiscriminada del tarball sobre producción.
 
 ## 10. Pendientes y criterios de cierre
 
-- [ ] Diagnosticar y resolver INC-2026-11-15-CSRF.
+- [x] Diagnosticar y resolver INC-2026-11-15-CSRF (confirmación funcional del usuario).
 - [ ] Obtener evidencia explícita de códigos HTTP de acceso administrativo sin sesión.
 - [ ] Validar escritura real autorizada, auditoría y proyección pública.
 - [ ] Revisar reglas de elegibilidad y conflictos entre funciones antes de ampliar el flujo.
 - [ ] Sincronizar código operativo revisado y sin secretos con GitHub; el repositorio actual no es fuente de despliegue verificada.
-- [ ] Actualizar documentación de operación y checklist tras resolver la incidencia.
+- [x] Actualizar documentación de la incidencia CSRF tras resolverla.
 
 ## 11. Registro de cambios
 
-**v1.3 (2026-11-15):** consulta y panel administrativo para noviembre 2026–enero 2027; cargador privado multimes; API administrativa de reemplazos con programación consolidada; despliegue y verificaciones de lectura. Incidencia CSRF abierta en escritura.
+**v1.3 (2026-11-15):** consulta y panel administrativo para noviembre 2026–enero 2027; cargador privado multimes; API administrativa de reemplazos con programación consolidada; despliegue y verificaciones de lectura. Incidencia CSRF detectada y posteriormente corregida en el dashboard; confirmación funcional del usuario.
+
+**Hotfix v1.3 (2026-11-15):** lectura de `csrfData.csrf_token` en lugar de `csrfData.token` en el dashboard. Se conserva la API CSRF y su control de sesión.
 
 **Versiones anteriores:** consultar README y documentos históricos del repositorio. No asumir equivalencia entre artefactos históricos y archivos de producción.
