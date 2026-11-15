@@ -3,7 +3,7 @@
 **Fecha:** 2026-11-15  
 **Sistema:** Programaciones IDMJI, Bois-des-Filion  
 **Entorno:** MochaHost / cPanel / PHP  
-**Estado:** desplegado; consulta multimes validada; **incidencia CSRF corregida y funcionamiento confirmado por el usuario**. Persistencia y auditoría del reemplazo publicado pendientes de evidencia explícita.  
+**Estado:** desplegado; consulta multimes validada; **incidencia CSRF corregida y funcionamiento confirmado por el usuario**. Persistencia y visualización pública del reemplazo confirmadas por el usuario; auditoría interna pendiente de inspección directa.  
 **Producción:** https://dydata.ca/idmji/  
 **Administración:** https://dydata.ca/idmji/admin/
 
@@ -51,7 +51,7 @@ Los tres archivos de programación permanecen privados bajo `/home/hruiz76/idmji
 | Paquete preparado | `/home/hruiz76/idmji-data/release-v1.3/` | Copias verificadas de tres componentes |
 | Respaldo previo | `/home/hruiz76/idmji-reemplazos-pre-v1.3.tar.gz` | Respaldo disponible antes de activar v1.3 |
 
-La API administrativa exige sesión; la escritura usa POST y protección CSRF. La lógica de almacenamiento contempla bloqueo de archivo, guardado atómico y auditoría. **El fallo CSRF fue corregido en el panel; queda pendiente evidencia explícita de persistencia, auditoría y proyección pública del reemplazo publicado.**
+La API administrativa exige sesión; la escritura usa POST y protección CSRF. La lógica de almacenamiento contempla bloqueo de archivo, guardado atómico y auditoría. **El fallo CSRF fue corregido en el panel; el usuario confirmó guardado efectivo y visualización del nuevo colaborador en la programación pública; la auditoría interna aún no fue inspeccionada.**
 
 ## 4. Despliegue realizado
 
@@ -84,7 +84,7 @@ IDMJI v1.3: archivos administrativos publicados
 | Formulario de reemplazo para enero | Usuario confirmó visualización correcta sin guardar | Aprobada visualmente |
 | Escritura y auditoría en almacenamiento privado de prueba | Tres reemplazos de prueba; validadores aprobados | Aprobada en entorno aislado |
 | Obtención de token CSRF desde el panel | El usuario confirmó que funciona tras la corrección | **Resuelta funcionalmente** |
-| Reflejo de reemplazo real en consulta pública | No ejecutado | Pendiente |
+| Reflejo de reemplazo real en consulta pública | Usuario confirmó nuevo colaborador visible tras guardar | **Aprobada funcionalmente** |
 
 ## 6. Incidencia resuelta INC-2026-11-15-CSRF
 
@@ -96,7 +96,7 @@ IDMJI v1.3: archivos administrativos publicados
 
 **Corrección aplicada en MochaHost:** cambiar en `admin/dashboard.html` la expresión `const token = csrfData.token;` por `const token = csrfData.csrf_token;`. Se creó un respaldo previo `admin/dashboard.html.pre-csrf-fix` mediante el procedimiento indicado; su existencia no fue verificada independientemente.
 
-**Validación:** el usuario confirmó «listo funciona» después de la modificación. No se recibieron todavía evidencias explícitas de contenido persistido en `reemplazos.json`, historial de auditoría o reflejo del cambio en la API pública.
+**Validación:** el usuario confirmó «listo funciona» después de la modificación. En confirmación posterior, el usuario indicó que el reemplazo quedó guardado y el nuevo colaborador aparece en la programación pública. No se ha inspeccionado directamente el contenido de `reemplazos.json` ni el historial de auditoría.
 
 **Reversión puntual:** restaurar `dashboard.html` desde el respaldo `dashboard.html.pre-csrf-fix` solo si es necesario y tras validar su contenido; ello reintroduciría el error CSRF, por lo que no se recomienda salvo como contingencia.
 
@@ -136,7 +136,8 @@ No ejecutar una extracción indiscriminada del tarball sobre producción.
 
 - [x] Diagnosticar y resolver INC-2026-11-15-CSRF (confirmación funcional del usuario).
 - [ ] Obtener evidencia explícita de códigos HTTP de acceso administrativo sin sesión.
-- [ ] Validar escritura real autorizada, auditoría y proyección pública.
+- [x] Validar funcionalmente escritura real y proyección pública (confirmación del usuario).
+- [ ] Inspeccionar directamente el historial de auditoría y la integridad de los registros persistidos.
 - [ ] Revisar reglas de elegibilidad y conflictos entre funciones antes de ampliar el flujo.
 - [ ] Sincronizar código operativo revisado y sin secretos con GitHub; el repositorio actual no es fuente de despliegue verificada.
 - [x] Actualizar documentación de la incidencia CSRF tras resolverla.
@@ -144,6 +145,8 @@ No ejecutar una extracción indiscriminada del tarball sobre producción.
 ## 11. Registro de cambios
 
 **v1.3 (2026-11-15):** consulta y panel administrativo para noviembre 2026–enero 2027; cargador privado multimes; API administrativa de reemplazos con programación consolidada; despliegue y verificaciones de lectura. Incidencia CSRF detectada y posteriormente corregida en el dashboard; confirmación funcional del usuario.
+
+**Validación funcional posterior (2026-11-15):** usuario confirmó que el reemplazo se guardó y se reflejó en la programación pública; auditoría interna pendiente de inspección.
 
 **Hotfix v1.3 (2026-11-15):** lectura de `csrfData.csrf_token` en lugar de `csrfData.token` en el dashboard. Se conserva la API CSRF y su control de sesión.
 
